@@ -1,0 +1,34 @@
+<div class = 'header'>
+	<div class = 'logo-area'>
+		<div class = 'logo-font'>
+			<span>
+				<a href = '/'>
+					<%= data.config[0].blog_name %>
+				</a>
+			</span>
+			<div class = 'logo-small-font'>
+				<span><%= data.config[0].blog_sign %></span>
+			</div>
+		</div>
+	</div>
+
+	<div class = 'menu-top'>
+		<ul class = 'menu-list'>
+			<li>
+				<a href = '/'>
+					<%= data.menu[0].menu_name %>
+				<!-- 	<span class = 'menu-draw'></span> 小按钮-->
+			</li>
+			<li>
+				<a href = '/whoami'>
+					<%= data.menu[1].menu_name %>
+				</a>
+			</li>
+			<li>
+				<a href = '/tellme'>
+					<%= data.menu[2].menu_name %>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>

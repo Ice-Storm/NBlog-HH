@@ -1,0 +1,43 @@
+<% include adminHeader.html %>
+	<div class = 'content-sort'>
+		<div class = 'content-sort-change'>--> 文章评论</div>
+		<div class = 'content-publish'>
+			<a href = '/admin/adminIndex/content/addArtical'><span>添加文章</span></a>
+		</div>
+	</div>
+	<div class = 'content-content'>
+		<table class = 'table'>
+			<tr>
+				<td>内容</td>
+				<td>作者</td>
+				<td>时间</td>
+				<td>邮箱</td>
+				<td>操作</td>
+			</tr>
+			<% for (var i = 0; i < data.comment.length; i++){ %>
+				<tr>
+					<td><%= data.comment[i].content %></td>
+					<td><%= data.comment[i].author %></td>
+					<td><%= data.comment[i].time %></td>
+					<td><%= data.comment[i].email %></td>
+					<td>
+						<a href = '/admin/adminArtical/deal/tellMeWords/<%= page.curPage %>?delete=true&id=<%= data.comment[i].id %>'>
+							<img src = '/uploadImg/delete.png' class = 'img-ico' data-id = '<%= data.comment[i].id %>'>
+						</a>
+					</td>
+				</tr>
+			<% } %>
+		</table>
+		
+		<div class = 'page-group'>
+			共<%= page.totalPage %>页
+			<a href = '/admin/adminArtical/deal/words/<%= page.previousPage %>'>
+				<input type = 'button' value = '上一页' class = 'button-btn'>
+			</a>
+			<a href = '/admin/adminArtical/deal/words/<%= page.nextPage %>'>
+				<input type = 'button' value = '下一页' class = 'button-btn'>
+			</a>
+		</div>
+
+	</div>
+<% include adminFooter.html %>

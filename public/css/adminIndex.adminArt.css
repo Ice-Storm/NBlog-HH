@@ -1,0 +1,186 @@
+.content-content {
+	width: 98%;
+	margin-left: 1%;
+	margin-top: 10px;
+	height: 400px;
+	border: 1px solid #80BDCB;
+	background-color: #BBDDE5;
+}
+
+.content-content-m {
+	width: 98%;
+	margin-left: 1%;
+	margin-top: 10px;
+	height: 400px;
+	border: 1px solid #80BDCB;
+}
+
+.content-title {
+	width: 100%;
+	height: 30px;
+	background-color: #BBDDE5;
+}
+
+.content-title :nth-child(2){
+	width:29%;
+	height:25px;
+	float: left;
+}
+
+.img-ico {
+	margin-left: 20px;
+	width: 20px;
+	cursor: pointer;
+}
+
+.content-title-m :nth-child(2){
+	width:29%;
+	height:25px;
+	float: left;
+}
+
+.content-title :nth-child(5){
+	width:14%;
+	height:25px;
+	float: left;
+}
+
+.content-title-m :nth-child(5){
+	width:14%;
+	height:25px;
+	float: left;
+}
+
+.content-title-m :nth-child(1) span {
+	padding-left: 42%;
+}
+
+.content-title :nth-child(2) span {
+	padding-left: 42%;
+}
+
+.content-title-m :nth-child(2) span {
+	padding-left: 22%;
+}
+
+.content-title :nth-child(3) span {
+	padding-left: 22%;
+}
+
+.content-title-m :nth-child(3) span {
+	padding-left: 16%;
+}
+
+.content-title-m :nth-child(4) span {
+	padding-left: 42%;
+}
+
+.content-title-m :nth-child(5) span {
+	padding-left: 12%;
+}
+
+.content-title-m :nth-child(7) span {
+	padding-left: 52%;
+}
+
+.content-title li{
+	width:10%;
+	height:25px;
+	float: left;
+	background-color: #BBDDE5;
+	border: 1px solid #DDEEF2;
+	border-top: 0px;
+	padding-top: 4px;
+}
+
+.content-title-m li{
+	width:10%;
+	height:25px;
+	float: left;
+	background-color: #BBDDE5;
+	border: 1px solid #DDEEF2;
+	border-top: 0px;
+	padding-top: 4px;
+}
+
+.content-title li span{
+	padding-left: 38%;
+}
+
+.content-title :nth-child(7){
+	border-right: 1px solid #BBDDE5;
+	width: 14%;
+}
+
+.content-artical {
+	width: 90%;
+	height: 500px;
+	margin-left: 5%;
+}
+
+.content-artical-all {
+	margin-top: 15px;
+}
+
+.content-artrical-title {
+	margin-left: 10%;
+	font-size: 20px;
+}
+
+.title-input {
+	width: 40%;
+	height: 25px;
+	padding-left: 10px;
+	color: gray;
+}
+
+.select-input {
+	padding-left: 6%;
+	display: inline;
+	width: 20%;
+}
+
+.textarea-position {
+	margin-top: 15px;
+	margin-left: 10%;
+}
+
+.teatarea-input {
+	padding: 15px;
+	width: 56%;
+	height: 360px;
+}
+
+.group-button {
+		margin-left: 46%;
+	margin-top: 20px;
+}
+
+.submit-btn {
+	width: 65px;
+	height: 23px;
+	margin-right: 3%;
+	background-color: #fff;
+	border-radius: 3px;
+	border: 1px solid gray;
+}
+
+.button-btn {
+	width: 65px;
+	height: 23px;
+	background-color: #fff;
+	border-radius: 3px;
+	border: 1px solid gray;
+}
+
+.page-group {
+	margin-top: 30px;
+	margin-left: 79%;
+	float: left;
+}
+
+.artical-sort {
+	margin-left: 18%;
+	margin-top: 20px;
+	float: left;
+}

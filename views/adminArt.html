@@ -1,0 +1,148 @@
+<% include adminHeader.html %>
+		<div class = 'content-sort'>
+			<div class = 'content-sort-change'>--> 文章管理</div>
+			<div class = 'content-publish'>
+				<a href = '/admin/adminIndex/content/addArtical'><span>添加文章</span></a>
+			</div>
+		</div>
+		<div class = 'content-content'>
+			<ul class = 'content-title'>
+				<li>
+					<span>ID</span>
+				</li>
+				<li>
+					<span>文章标题</span>
+				</li>
+				<li>
+					<span>文章分类</span>
+				</li>
+				<li>
+					<span>置顶</span>
+				</li>
+				<li>
+					<span>日期</span>
+				</li>
+				<li>
+					<span>操作</span>
+				</li>
+				<li>
+					<span>作者</span>
+				</li>
+			</ul>
+			
+			<% for (i = 0;i < info.length; i++){ %>
+				<ul class = 'content-title-m'>
+					<li><span><%= info[i].id %></span></li>
+					<li><span><%= info[i].title %></span></li>
+					<li><span><%= info[i].sort %></span></li>
+					<li><span><%= info[i].flag %></span></li>
+					<li><span><%= info[i].time %></span></li>
+					<li>
+						<a href = '/admin/adminIndex/dealRightMenuList/art/1/?delete=true&id=<%= info[i].id %>'>
+							<img src = '/uploadImg/delete.png' class = 'img-ico'>
+						</a>
+
+						
+						<img src = '/uploadImg/editor.png' class = 'img-ico' data-img = 'upload' data-id = '<%= info[i].id %>' data-flag = '<%= info[i].flag %>'>
+					</li>
+					<li><span><%= info[i].author %></span></li>
+				</ul>
+			<% } %>
+
+			<div class = 'page-group'>
+				共<%= page.totalPage %>页
+				<a href = '/admin/adminIndex/dealRightMenuList/art/<%= page.previousPage %>'>
+					<input type = 'button' value = '上一页' class = 'button-btn'>
+				</a>
+				<a href = '/admin/adminIndex/dealRightMenuList/art/<%= page.nextPage %>'>
+					<input type = 'button' value = '下一页' class = 'button-btn'>
+				</a>
+			</div>
+
+		</div>
+		<link rel="stylesheet" href="/libs/kindeditor-4.1.10/themes/default/default.css" />
+		<link rel="stylesheet" href="/libs/kindeditor-4.1.10/themes/simple/simple.css" />
+		<script charset="utf-8" src="/libs/kindeditor-4.1.10/kindeditor-min.js"></script>
+		<script charset="utf-8" src="/libs/kindeditor-4.1.10/lang/zh_CN.js"></script>
+		<script src = '/javascript/jquery-2.1.1.js'></script>
+		<script>
+		KindEditor.ready(function(K) {
+
+			var k = k;
+
+			$('.content-title-m').click(function (event) {
+
+				if ($(event.target).data('img') == 'upload') {
+					var html = "<div class = 'content-artical'>" +
+						"<div class = 'content-artical-all'>"+
+							"<form action = '' method = 'POST' id = 'articalForm'>"+
+								"<div class = 'content-artrical-title'>"+
+									"<span>标题:</span>"+
+									"<input type = 'text' class = 'title-input' name = 'title' id = 'title'/>"+
+									"<div class = 'select-input'>"+
+										"<span>置顶: 是</span>"+
+										"<input type = 'radio' name = 'flag' value = '1'>"+
+										"<span>否</span>"+
+										"<input type = 'radio' name = 'flag' value = '0'>"+
+										"<input type = 'text' name = 'id' hidden id = 'titleId'>" +
+									"</div>"+
+								"</div>"+
+								"<div class = 'textarea-position'>"+
+									"<textarea class = 'teatarea-input' id = 'editor' name = 'content'></textarea>"+
+								"</div>"+
+								"<div class = 'artical-sort'>" +
+									"<label for = 'sort' >分类: </label>" +
+									"<input type = 'text' id = 'sort' name = 'sort' maxlength = '10'> " +
+								"</div>" +
+								"<div class = 'group-button'>"+
+									"<input type = 'submit' value = '提交' class = 'submit-btn'>"+
+									"<input type = 'button' value = '预览' class = 'button-btn'>"+
+								"</div>"+
+							"</form>"+
+						"</div>"+
+					"</div>"
+
+					
+					$('.content').append(html);
+					$('#titleId').val($(event.target).data('id'));
+					if ($(event.target).data('flag') == '顶') {
+						$("input[value='1']").attr('checked','checked');
+					} else {
+						$("input[value='0']").attr("checked", '');
+					}
+
+					
+					var ajaxPar = {
+						editor: 'true',
+						id: $(event.target).data('id')
+					}
+
+					$.get('/admin/adminIndex/dealRightMenuList/art/1', ajaxPar, function (data) {
+						$('#editor').html(data[0].content);
+						$('#title').val(data[0].title);
+						$('#sort').val(data[0].sort);
+
+					var editor = K.create('#editor', {
+						 height : '300px',
+			             items: [
+					        'source','code',
+					        'wordpaste','justifyleft', 'justifycenter', 'justifyright',
+					        'outdent','fontname', 'fontsize','forecolor', 'hilitecolor', 'bold',
+					        'italic', 'underline', 'strikethrough', 'lineheight',
+				       	    'hr', 'emoticons', 'link'
+						],
+
+						resizeType: 0,
+
+						uploadJson : '/admin/adminIndex/content/addArtical'
+			        });
+
+					})
+
+					$('.content-content').remove();
+				}
+
+			});
+	    })
+		</script>
+<% include adminFooter.html %>

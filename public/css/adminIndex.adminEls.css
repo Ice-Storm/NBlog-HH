@@ -1,0 +1,47 @@
+.input-group input {
+	width: 250px;
+	height: 25px;
+	padding-left: 10px;
+	font: gray;
+	margin-left: 10px;
+	margin-right: 45px;
+	color: gray;
+}
+
+.alert-star {
+	color: red;
+	font-size: 18px;
+}
+
+.input-group {
+	margin: 20px;
+	font-size: 16px; 
+}
+
+.add-message {
+	float: left;
+	border-right: 1px solid gray;
+}
+
+.submit {
+	width: 60px;
+	height: 25px;
+	background-color: #fff;
+	margin-left: 40%;
+	border: 1px solid gray;
+	cursor: pointer;
+}
+
+.input-add {
+	width: 60px;
+	height: 25px;
+	background-color: #fff;
+	border: 1px solid gray;
+	cursor: pointer;
+	margin-left: 3%;
+}
+
+.add-message-right {
+	float: left;
+	margin-left: 50px;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel = 'stylesheet' type = 'text/css' href = '/css/ini.css'>
+	<link rel = 'stylesheet' type = 'text/css' href = '/css/indexCom.css'>
+	<link rel = 'stylesheet' type = 'text/css' href = '/css/tellMe.css'>	
+</head>
+                     
+<body>
+	<div class = 'body'>
+		<% include indexHeader.html %>
+
+		<div class = 'about'>
+			<div>
+				<p class = 'about-title'>留言</p>
+				<div class = 'about-content'>
+					<%- data.words[0].content %>
+				</div>
+				<div class = 'about-me'>
+					<p class = 'about-me-title'>Contact me</p>
+					<div class = 'about-me-info'>
+						<p><img src = '/uploadimg/email.png' class = 'about-me-info-img'>wcwz020140@163.com</p>
+						<br />
+						<p><img src = '/uploadimg/qq.png' class = 'about-me-info-img'>523003801</p>
+					</div>
+				</div>
+
+				<div class = 'division-line'></div>
+
+				<% for (var i = 0; i < data.wordsComment.length; i++){ %>
+					<div class = 'content-artical-replay'>
+						<div class = 'content-artical-replay-block'>
+							<div class = 'content-artical-replay-img-all'>
+								<img src = '/uploadImg/1.jpg' class = 'content-artical-replay-img'>
+								<p>&nbsp;Reply</p>
+							</div>
+							<div class = 'content-artical-replay-where'></div>
+
+							<div class = 'content-artical-replay-content'>
+								<p class = 'content-artical-replay-content-time'>
+									<%= data.wordsComment[i].time %>
+								</p>
+								<p class = 'content-artical-replay-content-title'>
+									<%= data.wordsComment[i].author %>
+								</p>
+								<p class = 'content-artical-replay-content-content'>
+									<%= data.wordsComment[i].content %>
+								</p>
+							</div>
+						</div>
+					</div>
+				<% } %>
+
+				<% include indexComReplay.html %>
+
+			</div>
+		</div>
+
+		<div class = 'right-bar'>
+
+			<% include indexComPubArtical.html %>
+
+			<div class = 'right-bar-content'>
+
+				<% include indexComRecReplay.html %>
+
+				<% include indexComFun.html %>
+				
+			</div>
+		</div>
+
+		<% include indexComFooter.html %>
+		
+	</div>
+</body>

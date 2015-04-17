@@ -1,0 +1,83 @@
+<% include adminHeader.html %>
+		<div class = 'content-sort'>
+			<div class = 'content-sort-change'>-->  Index 页面设置</div>
+			<div class = 'content-publish'>
+				<a href = '/admin/adminIndex/content/addArtical'><span>添加文章</span></a>
+			</div>
+		</div>
+		<div class = 'add-message'>
+			<form action = '/admin/adminIndex/dealRightMenuList/else' method = 'POST'>
+				<div class = 'input-group'>
+					<ul>
+						<li>
+							<div class = 'input-group'>
+							<span class = 'alert-star'>*</span>
+							博客名称:
+							 <input type = 'text' name = 'blogName' maxlength = '10' value = '<%=  data.config[0].blog_name %>'>
+							</div>
+						</li>
+						<li>
+							<div class = 'input-group'>
+							<span class = 'alert-star'>*</span>
+							博客签名:
+							 <input type = 'text' name = 'blogSign' maxlength = '30' value = '<%=  data.config[0].blog_sign %>'>
+							</div>
+						</li>
+
+						<% for (i = 1; i <= data.menu.length; i++){ %>
+							<% if (data.menu[i - 1].foreign_p == 1) { %>
+								<li>
+									<div class = 'input-group'>
+									<span class = 'alert-star'>*</span>
+									菜单名称:
+									 <input type = 'text' name = 'blogMenu<%= i %>' maxlength = '10' value = '<%= data.menu[i - 1].menu_name %>'>
+									</div>
+								</li>
+							<% } %>
+						<% } %>
+
+
+
+						<li>
+							<div class = 'input-group'>
+							<span class = 'alert-star'>*</span>
+							版权所有:
+							 <input type = 'text' name = 'blogRight' maxlength = '100' value = '<%= data.config[0].blog_rights %>'>
+							</div>
+						</li>
+						<li>
+							<div class = 'input-group'>
+							<span class = 'alert-star'>*</span>
+							登录地址: <input type = 'text' name = 'blogAdmin' maxlength = '100' value = '<%= data.config[0].blog_address %>'>
+							</div>
+						</li>
+						<li>
+							<div class = 'input-group'>
+							<span class = 'alert-star'>*</span>
+							Github &nbsp;: <input type = 'text' name = 'blogGit' value = '<%= data.config[0].blog_github %>'>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<input type = 'submit' value = '提交' class = 'submit'>
+			</form>
+		</div>
+
+		<div class = 'add-message-right'>
+			<form action = '/admin/adminIndex/dealRightMenuList/else' method = 'POST'>
+				<div class = 'input-group'>
+					<ul>
+						<% for (i = 1; i <= data.tag.length; i++) { %>
+							<li><div class = 'input-group'>标签 <%= i %>: <input type = 'text' name = 'tag<%= i %>' maxlength = '10' value = '<%= data.tag[i - 1].tag_name %>'></div></li>
+						<% } %>
+
+
+						<li><div class = 'input-group'>子菜单: <input type = 'text' name = 'menu_min1' maxlength = '10' value = '<%= data.childMenu[0].menu_name %>'></div></li>
+						<li><div class = 'input-group'>子菜单: <input type = 'text' name = 'menu_min2' maxlength = '10' value = '<%= data.childMenu[1].menu_name %>'></div></li>
+					</ul>
+				</div>
+				<input type = 'submit' value = '提交' class = 'submit'>
+			</form>
+		</div>
+
+<% include adminFooter.html %>

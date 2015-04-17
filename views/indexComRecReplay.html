@@ -1,0 +1,10 @@
+<p class = 'right-bar-content-title'>近期评论</p>
+<ul>
+	<% for (var i = 0; i < data.recentlyReplay.length; i++) { %>
+		<% if (data.recentlyReplay[i].title){ %>
+		<li>
+			<span><%= data.recentlyReplay[i].author %></span> 发表在《<a href = '/artical/<%= data.recentlyReplay[i].time %>/<%= data.recentlyReplay[i].title %>'><%= data.recentlyReplay[i].title %></a>》
+		</li>
+		<% } %>
+	<% } %>
+</ul>

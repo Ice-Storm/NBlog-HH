@@ -1,0 +1,63 @@
+<% include adminHeader.html %>
+	<div class = 'content-sort'>
+		<div class = 'content-sort-change'>--> Tell me 页面设置</div>
+		<div class = 'content-publish'>
+			<a href = '/admin/adminIndex/content/addArtical'><span>添加文章</span></a>
+		</div>
+	</div>
+
+	<link rel="stylesheet" href="/libs/kindeditor-4.1.10/themes/default/default.css" />
+	<link rel="stylesheet" href="/libs/kindeditor-4.1.10/themes/simple/simple.css" />
+	<script charset="utf-8" src="/libs/kindeditor-4.1.10/kindeditor-min.js"></script>
+	<script charset="utf-8" src="/libs/kindeditor-4.1.10/lang/zh_CN.js"></script>
+
+	<div class = 'about-me-content'>
+		
+		<div class = 'about-me-show'>
+			<div class = 'about-me-show-content'>
+				<%- data.content[0].content %>
+			</div>
+			<input type = 'button' value = '修改' class = 'button' id = 'btn'>
+		</div>
+	</div>
+	<script>
+
+
+	KindEditor.ready(function(K) {
+
+		var k = k;
+
+		var btn = document.getElementById('btn');
+
+		btn.addEventListener('click', function () {
+
+			var html = '<form method = "Post" action = "">' +
+			'<textarea id = "editor" name = "editorContent"></textarea>' +
+			'<input type = "submit" value = "修改" class = "button form-submit">' +
+			'</form>'
+
+			
+			var cache = document.getElementsByClassName('about-me-show')[0].innerHTML;
+			document.getElementsByClassName('about-me-show')[0].innerHTML = html;
+			document.getElementsByClassName('about-me-show')[0].style.border = '0px solid white';
+			document.getElementById('editor').innerHTML = cache;
+
+			var editor = K.create('#editor', {
+				 width : '100%',
+				 height : '300px',
+	             items: [
+			        'source','code',
+			        'wordpaste','justifyleft', 'justifycenter', 'justifyright',
+			        'outdent','fontname', 'fontsize','forecolor', 'hilitecolor', 'bold',
+			        'italic', 'underline', 'strikethrough', 'lineheight',
+		       	    'hr', 'emoticons', 'link'
+				],
+
+				resizeType: 0,
+
+				uploadJson : '/admin/adminIndex/content/addArtical'
+	        });
+		}, false)
+    })
+	</script>
+<% include adminFooter.html %>

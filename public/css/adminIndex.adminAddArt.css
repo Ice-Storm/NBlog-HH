@@ -1,0 +1,67 @@
+.content-artical {
+	width: 90%;
+	height: 500px;
+	margin-left: 5%;
+}
+
+.content-artical-all {
+	margin-top: 15px;
+}
+
+.content-artrical-title {
+	margin-left: 10%;
+	font-size: 20px;
+}
+
+.title-input {
+	width: 40%;
+	height: 25px;
+	padding-left: 10px;
+	color: gray;
+}
+
+.select-input {
+	padding-left: 6%;
+	display: inline;
+	width: 20%;
+}
+
+.textarea-position {
+	margin-top: 15px;
+	margin-left: 10%;
+}
+
+.teatarea-input {
+	padding: 15px;
+	width: 56%;
+	height: 360px;
+}
+
+.group-button {
+	margin-left: 46%;
+	margin-top: 20px;
+}
+
+.submit-btn {
+	width: 65px;
+	height: 23px;
+	margin-right: 3%;
+	background-color: #fff;
+	border-radius: 3px;
+	border: 1px solid gray;
+}
+
+.button-btn {
+	width: 65px;
+	height: 23px;
+	background-color: #fff;
+	border-radius: 3px;
+	border: 1px solid gray;
+}
+
+.artical-sort {
+	margin-left: 18%;
+	margin-top: 20px;
+	float: left;
+}
+

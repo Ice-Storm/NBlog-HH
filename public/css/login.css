@@ -1,0 +1,68 @@
+body {
+	background: url('/uploadImg/loginBg.jpg') no-repeat;
+	background-size:100% 150%;
+}
+
+
+.login {
+	width: 450px;
+	float: left;
+	margin-top: 150px;
+	margin-left: 35%;
+	background-color: #EBEBED;
+	opacity: 0.8;
+	border-radius: 5px;
+}
+
+.login-title {
+	border-radius: 5px;
+	width: 100%;
+	background-color:#EBEBED;
+}
+
+.title-img {
+	width: 80px;
+	border-radius: 100px;
+	margin-left: 40%;
+	margin-top: 20px;
+}
+
+.login-input{
+	font-size: 14px;
+	padding-left: 20%;
+}
+
+.login-input li{
+	margin-top: 20px;
+}
+
+.login-input input{
+	margin-top: 5px;
+	width: 255px;
+	height: 26px;
+	border: 1px solid black;
+	border-radius: 3px;
+	padding-left: 9px;
+	padding-right: 9px;
+	font: 20px;
+}
+
+.btn-group {
+	margin-top: 30px;
+	float: left;
+	margin-left: 42%;
+	margin-bottom: 30px;
+}
+
+.btn {
+	width: 70px;
+	height: 24px;
+	border-radius: 3px;
+	margin-left: 15px;
+	border: 1px solid black;
+	background-color: #fff;
+}
+
+.warning {
+	color: red;
+}

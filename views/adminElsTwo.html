@@ -1,0 +1,25 @@
+<% include adminHeader.html %>
+	<div class = 'content-sort'>
+		<div class = 'content-sort-change'>-->  Index Artical 图片设置</div>
+		<div class = 'content-publish'>
+			<a href = '/admin/adminIndex/content/addArtical'><span>添加文章</span></a>
+		</div>
+	</div>
+	<div class = 'upload-img'>
+		<form action = '/admin/adminIndex/dealRightMenuList/else2?where=index' method = 'POST' enctype='multipart/form-data'>
+			<img src = '/uploadImg/index.jpg' class = 'img' />
+			<input type = 'file' class = 'input-file' name = 'imgFile'>
+			<input type = 'submit' class = 'input-submit' value = '上传图片'>
+			<span class = 'img-flag'>首页</span>
+		</form>
+		
+	</div>
+	<div class = 'upload-img'>
+		<form action = '/admin/adminIndex/dealRightMenuList/else2?where=artical' method = 'POST' enctype='multipart/form-data'>
+			<img src = '/uploadImg/artical.jpg' class = 'img' />
+			<input type = 'file' class = 'input-file' name = 'imgFileE'>
+			<input type = 'submit' class = 'input-submit' value = '上传图片'>
+			<span class = 'img-flag'>文章</span>
+		</form>
+	</div>
+<% include adminFooter.html %>

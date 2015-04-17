@@ -1,0 +1,10 @@
+<p class = 'content-artical-public-title'>推荐文章</p>
+<div class = 'content-artical-public-content'>
+	<ul>
+		<% for (var i = 0; i < data.pubArtical.length; i++) { %>
+			<li>
+				<a href = '/artical/<%= data.pubArtical[i].time %>/<%= data.pubArtical[i].title %>'><%= data.pubArtical[i].title %></a>
+			</li>
+		<% } %>
+	</ul>
+</div>

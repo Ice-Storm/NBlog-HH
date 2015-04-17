@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel = 'stylesheet' type = 'text/css' href = '/css/ini.css'>
+	<link rel = 'stylesheet' type = 'text/css' href = '/css/login.css'>
+</head>
+<body>
+	<div class = 'login'>
+		<div class = 'login-title'>
+			<span>
+				<img src="/uploadImg/login.jpg" class = 'title-img'>
+			</span>
+		</div>
+		<form method = 'POST' action =''>
+			<ul class = 'login-input'>
+				<li>
+					<label for = 'user'>Username: </label><br />
+					<input type = 'text' id = 'user' name = 'username'>
+				</li>
+				<li>
+					<label for= 'password'>Password: </label><br />
+					<input type = 'password' id = 'password' name = 'password'>
+				</li>
+				
+				<li><span class = 'warning'><%= info? info : '' %></span></li>
+	
+			</ul>
+			<div class = 'btn-group'>
+				<input type	= 'button' value = '找回密码' class = 'btn' id = 'reSetPwd'>
+				<input type	= 'submit' value = '登录' class = 'btn' id = 'login'>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript" src = '/javascript/jquery-2.1.1.js'></script>
+	<script type="text/javascript">
+		$('#reSetPwd').click(function () {
+			$('.login-input').html('');
+			var reSetPwdHtml = '<li>' +
+					'<label for= "reSetUser">Username: </label><br />' +
+					'<input type = "text" id = "reSetUser" name = "usernameReSet">'
+				'</li>';
+			$('.login-input').append(reSetPwdHtml);
+			$('#reSetPwd').remove();
+			$('.btn-group').css({'margin-left':'62%'});
+			$('#login').val('发送邮件');
+		})
+	</script>
+</body>

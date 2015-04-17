@@ -1,0 +1,35 @@
+.upload-img {
+	margin-top: 10px;
+	padding-left: 15%;
+	width: 40%;
+	padding: 30px;
+	float: left;
+	border: 1px solid black;
+	margin-left: 3%;
+}
+
+.input-file {
+	margin-top: 10px;
+	margin-left: 25%;
+	width: 180px;
+}
+
+.input-submit {
+	margin-top: 10px;
+	margin-left: 20px;
+	width: 72px;
+}
+
+.img {
+	width: 40%;
+	height: 180px;
+	margin-left: 25%;
+}
+
+.img-flag {
+	display: block;
+	margin-left: 40%;
+	margin-top: 30px;
+	font-size: 24px;
+	font-weight: bold;
+}

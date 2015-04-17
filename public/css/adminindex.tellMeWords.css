@@ -1,0 +1,98 @@
+.content-content {
+	width: 98%;
+	margin-left: 1%;
+	margin-top: 10px;
+	float: left;
+	border: 1px solid #80BDCB;
+	background-color: #BBDDE5;
+	overflow-y: scroll;
+	height: 480px;
+}
+
+.table {
+	width: 100%;
+}
+
+.table tr:hover{
+	background-color: #EBEBED;
+}
+
+.table td{
+	padding-left: 1%;
+	padding-right: 1%;
+	border: 1px solid black
+}
+
+.content-artical {
+	width: 90%;
+	height: 500px;
+	margin-left: 5%;
+}
+
+.content-artical-all {
+	margin-top: 15px;
+}
+
+.content-artrical-title {
+	margin-left: 10%;
+	font-size: 20px;
+}
+
+.title-input {
+	width: 40%;
+	height: 25px;
+	padding-left: 10px;
+	color: gray;
+}
+
+.select-input {
+	padding-left: 6%;
+	display: inline;
+	width: 20%;
+}
+
+.textarea-position {
+	margin-top: 15px;
+	margin-left: 10%;
+}
+
+.teatarea-input {
+	padding: 15px;
+	width: 56%;
+	height: 360px;
+}
+
+.group-button {
+	margin-left: 35%;
+	margin-top: 20px;
+}
+
+.submit-btn {
+	width: 65px;
+	height: 23px;
+	margin-right: 3%;
+	background-color: #fff;
+	border-radius: 3px;
+	border: 1px solid gray;
+}
+
+.button-btn {
+	width: 65px;
+	height: 23px;
+	background-color: #fff;
+	border-radius: 3px;
+	border: 1px solid gray;
+}
+
+.page-group {
+	margin-top: 20px;
+	margin-bottom: 30px;
+	margin-left: 79%;
+	float: left;
+}
+
+.img-ico {
+	margin-left: 20px;
+	width: 20px;
+	cursor: pointer;
+}

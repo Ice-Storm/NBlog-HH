@@ -1,0 +1,28 @@
+<% include adminHeader.html %>
+		<div class = 'content-sort'>
+			<div class = 'content-sort-change'>-->  Index 页面设置</div>
+			<div class = 'content-publish'>
+				<a href = '/admin/adminIndex/content/addArtical'><span>添加文章</span></a>
+			</div>
+		</div>
+		<div class = 'content-content'>
+			<ul class = 'content-title'>
+				<li>
+					<span>rss</span>
+				</li>
+				<li>
+					<span>heapTotal</span>
+				</li>
+				
+				<li>
+					<span>heapUsed</span>
+				</li>
+			</ul>
+			<ul class = 'content-title'>
+				<li><span><%= info.rss%></span></li>
+				<li><span><%= info.heapTotal%></span></li>
+				<li><span><%= info.heapUsed%></span></li>
+			</ul>
+		</div>
+
+<% include adminFooter.html %>

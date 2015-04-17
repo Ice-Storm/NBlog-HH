@@ -1,0 +1,106 @@
+<% include adminHeader.html %>
+	<div class = 'content-sort'>
+		<div class = 'content-sort-change'>-->  Index 页面设置</div>
+		<div class = 'content-publish'>
+			<span><%= spanInfo %></span>
+		</div>
+	</div>
+	<div class = 'content-content'>
+		<ul class = 'content-title'>
+			<li>
+				<span>用户名</span>
+			</li>
+			<li>
+				<span>用户密码</span>
+			</li>
+			<li>
+				<span>用户分组</span>
+			</li>
+			
+			<li>
+				<span>登录IP</span>
+			</li>
+			<li>
+				<span>登录日期</span>
+			</li>
+			<li>
+				<span>操作</span>
+			</li>
+		</ul>
+		
+		<% for (i = 0;i < info.length; i++){ %>
+			<ul class = 'content-title'>
+				<li><span><%= info[i].user %></span></li>
+				<li><span><%= info[i].password %></span></li>
+				<li><span><%= info[i].flag %></span></li>
+				<li><span><%= info[i].ip %></span></li>
+				<li><span><%= info[i].time %></span></li>
+				<li>
+					<a href = '/admin/adminIndex/dealRightMenuList/man/1/?delete=true&id=<%= info[i].id %>'>
+						<img src = '/uploadImg/delete.png' class = 'img-ico'>
+					</a>
+					<img src = '/uploadImg/editor.png' class = 'img-ico' data-img = 'editor' data-id = '<%= info[i].id %>' data-flag = ''>
+				</li>
+			</ul>
+		<% } %>
+		
+	</div>
+	<script src = '/javascript/jquery-2.1.1.js'></script>
+	<script>
+
+		var alertForm = function () {
+			var html = '<div class = "form-alert"></div>' +
+						'<form action = "" method = "POST">' +
+							'<div class = "input-group">' +
+								'<p>添加管理</p><i>X</i>' +
+								'<ul>' +
+								'<li><label>Petname:</label><br /><input type = "text" name = "petname" id = "petname"></li>' +
+								'<li><label>Username:</label><br /><input type = "text" name = "username" id = "username"></li>' +
+								'<li><label>Password:</label><br /><input type = "text" name = "password" id = "password"></li>' +
+								'<li><label>Password:</label><br /><input type = "text"></li>' +
+								'<li><label>QQ:</label><br /><input type = "text" name = "qq" id = "qq"></li>' +
+								'<li><label>Email:</label><br /><input type = "text" name = "email" id = "email"></li>' +
+								'<li>' +
+									'<span>Admin : </span><select name = "flag" id = "admin">' +
+										'<option value = "0">普通管理员</option>' +
+										'<option value = "1">超级管理员</option>' +
+									'</select>' +
+								'</li>' +
+								'<li><input type = "submit" value = "Submit"></li>' +
+								'</ul>' +
+							'</div>' +
+						'</form>' 
+			$('body').append(html);
+
+			$('i').click(function () {
+				$('.form-alert').remove();
+				$('form').remove();
+			})
+		}
+
+		$('.content-publish').click(alertForm);
+
+		$('.content-title').click(function (event) {
+			if ($(event.target).data('img') == 'editor') {
+				var ajaxPar = {
+					editor: 'true',
+					id: $(event.target).data('id')
+				}
+				$.get('/admin/adminIndex/dealRightMenuList/man/1/', ajaxPar, function (data) {
+					if (data.message) {
+						alert(data.message);
+					} else {
+						alertForm();
+						$('#petname').val(data[0].name);
+						$('#username').val(data[0].user);
+						$('#password').val(data[0].password);
+						$('#qq').val(data[0].qq);
+						$('#email').val(data[0].email);
+						$("#admin").get(0).options[data[0].flag].selected = true;
+					}
+					  
+				})
+			}
+		})
+	</script>
+<% include adminFooter.html %>

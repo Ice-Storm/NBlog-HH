@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel = 'stylesheet' type = 'text/css' href = '/css/ini.css'>
+	<link rel = 'stylesheet' type = 'text/css' href = '/css/indexCom.css'>
+	<link rel = 'stylesheet' type = 'text/css' href = '/css/whoAmI.css'>	
+</head>
+                     
+<body>
+	<div class = 'body'>
+		<% include indexHeader.html %>
+
+		<div class = 'about'>
+			<div>
+				<p class = 'about-title'>Just about me</p>
+				<div class = 'about-content'>
+					<%- data.words[0].content %>
+				</div>
+				<div class = 'about-me'>
+					<p class = 'about-me-title'>Contact me</p>
+					<div class = 'about-me-info'>
+						<p>
+							<img src = '/uploadimg/email.png' class = 'about-me-info-img'>
+							<%= data.personInfo[0].email %>
+						</p>
+						<br />
+						<p>
+							<img src = '/uploadimg/qq.png' class = 'about-me-info-img'>
+							<%= data.personInfo[0].qq %>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class = 'right-bar'>
+
+			<% include indexComPubArtical.html %>
+
+			<div class = 'right-bar-content'>
+
+				<% include indexComRecReplay.html %>
+
+				<% include indexComFun.html %>
+			</div>
+
+		</div>
+
+	<% include indexComFooter.html %>
+
+	</div>
+</body>
